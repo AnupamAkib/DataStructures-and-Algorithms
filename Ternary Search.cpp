@@ -32,7 +32,7 @@ lli input(){lli x; cin >> x; return x;}
 int digitCNT(int n){return ceil(log10(n)+0.00000001);}
 bool cmp(lli a, lli b){return a>b;}
 
-int TernarySearch(int a[], int n, int key){
+int TernarySearch(int a[], int n, int key){ //Complexity: O(log3(N))
     int first = 0, last = n, mid1, mid2;
     while(first <= last){
         mid1 = first + ((last - first) / 3);
