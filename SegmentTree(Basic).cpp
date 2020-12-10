@@ -85,8 +85,8 @@ void update(int node, int start, int end, int idx, int value){
     }
     int mid = (start + end) / 2;
     int left = node * 2, right = node * 2 + 1;
-    update(left, start, mid, idx, value); //check left
-    update(right, mid+1, end, idx, value); //check right
+    if(idx <= mid) update(left, start, mid, idx, value); //idx is in left side. so go left
+    else update(right, mid+1, end, idx, value); //idx is in right side. so go right
     tree[node].sum = tree[left].sum + tree[right].sum; //merge
 } // O(logN)
 
